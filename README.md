@@ -16,10 +16,9 @@ A aplicação funciona como um assistente financeiro capaz de registrar e consul
 - Validar dados antes de salvar;
 - Tratar erros de validação de forma centralizada.
 
-## Melhoria implementada
+## Comando implementado:
 
-A principal evolução em relação ao fluxo básico do desafio foi a ferramenta **consultar total gasto por categoria**.
-
+A principal evolução em relação ao fluxo básico foi a ferramenta **consultar total gasto por categoria**.
 Com ela, a pessoa pode fazer perguntas como:
 
 ```text
@@ -28,7 +27,7 @@ Quanto eu gastei com Alimentacao?
 
 O Spring AI identifica a intenção e pode chamar a ferramenta `consultar-total-gasto-por-categoria`, que consulta as transações reais armazenadas no banco.
 
-## Tecnologias
+## Tecnologias:
 
 - Java 17;
 - Spring Boot;
@@ -41,31 +40,31 @@ O Spring AI identifica a intenção e pode chamar a ferramenta `consultar-total-
 - Maven;
 - JUnit 5 e Mockito.
 
-## Estrutura
+## Estrutura:
 
 ```text
 src/main/java/com/luizeduardo/orcamentoai
-├── controller
-│   ├── AssistenteController.java
-│   └── TransacaoController.java
+- controller
+│   - AssistenteController.java
+│   - TransacaoController.java
 ├── domain
-│   ├── TipoTransacao.java
-│   └── Transacao.java
+│   - TipoTransacao.java
+│   - Transacao.java
 ├── dto
-│   ├── TransacaoRequest.java
-│   └── TransacaoResponse.java
+│   - TransacaoRequest.java
+│   - TransacaoResponse.java
 ├── exception
-│   └── GlobalExceptionHandler.java
+│   - GlobalExceptionHandler.java
 ├── repository
-│   └── TransacaoRepository.java
+│   - TransacaoRepository.java
 ├── service
-│   └── TransacaoService.java
+│   - TransacaoService.java
 ├── tools
-│   └── FinanceiroTools.java
+│   - FinanceiroTools.java
 └── OrcamentoAiApplication.java
 ```
 
-## Como executar
+## Como executar:
 
 É necessário ter Java 17+ e Maven instalados.
 
@@ -166,6 +165,4 @@ Os testes verificam o cálculo do total gasto por categoria e a rejeição de va
 
 ## O que aprendi
 
-O projeto mostrou como integrar Inteligência Artificial a uma aplicação Java sem deixar a IA responsável diretamente pela regra de negócio. O `ChatClient` interpreta o pedido da pessoa e utiliza ferramentas expostas com `@Tool`, enquanto as operações financeiras continuam sendo executadas pelo serviço da aplicação.
-
-Também foi possível praticar persistência com JPA, criação de endpoints REST, validação, tratamento de erros, testes automatizados e integração de texto e áudio com Spring AI.
+O projeto mostrou como integrar Inteligência Artificial a uma aplicação Java sem deixar a IA responsável diretamente pela regra de negócio. O `ChatClient` interpreta o pedido da pessoa e utiliza ferramentas expostas com `@Tool`, enquanto as operações financeiras continuam sendo executadas pelo serviço da aplicação. Também foi possível praticar persistência com JPA, criação de endpoints REST, validação, tratamento de erros, testes automatizados e integração de texto e áudio com Spring AI.
